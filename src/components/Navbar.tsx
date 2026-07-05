@@ -25,37 +25,39 @@ export default function Navbar() {
         WebkitTransform: 'translateZ(0)'
       }}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between w-full">
-        <Link to="/" onClick={() => setMenuOpen(false)} className="text-xl lg:text-2xl font-display font-semibold text-accent tracking-normal focus:outline-none focus-visible:outline-none z-50">
-          Caroline Lofts
-        </Link>
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => {
-            const isActive = location.pathname === link.path;
-            return (
-              <Link
-                key={link.name}
-                to={link.path}
-                className={`text-[13px] uppercase tracking-wide transition-colors duration-300 relative focus:outline-none focus-visible:outline-none ${
-                  isActive ? 'text-accent font-medium after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-[1px] after:bg-accent' : 'text-silver hover:text-clean-white'
-                }`}
-              >
-                {link.name}
-              </Link>
-            );
-          })}
+      <div className="w-full px-6 md:px-8 lg:px-12">
+        <div className="max-w-7xl mx-auto flex items-center justify-between w-full">
+          <Link to="/" onClick={() => setMenuOpen(false)} className="text-xl lg:text-2xl font-display font-semibold text-accent tracking-normal focus:outline-none focus-visible:outline-none z-50">
+            Caroline Lofts
+          </Link>
+          <div className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => {
+              const isActive = location.pathname === link.path;
+              return (
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  className={`text-[13px] uppercase tracking-wide transition-colors duration-300 relative focus:outline-none focus-visible:outline-none ${
+                    isActive ? 'text-accent font-medium after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-[1px] after:bg-accent' : 'text-silver hover:text-clean-white'
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
+          </div>
+          
+          {/* Mobile Menu Toggle */}
+          <button 
+            className="md:hidden text-[13px] uppercase tracking-wide text-silver hover:text-clean-white transition-colors focus:outline-none focus-visible:outline-none z-50"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+          >
+            {menuOpen ? 'Close' : 'Menu'}
+          </button>
         </div>
-        
-        {/* Mobile Menu Toggle */}
-        <button 
-          className="md:hidden text-[13px] uppercase tracking-wide text-silver hover:text-clean-white transition-colors focus:outline-none focus-visible:outline-none z-50"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-expanded={menuOpen}
-          aria-controls="mobile-menu"
-          aria-label={menuOpen ? "Close menu" : "Open menu"}
-        >
-          {menuOpen ? 'Close' : 'Menu'}
-        </button>
       </div>
 
       {/* Mobile Menu Dropdown */}
