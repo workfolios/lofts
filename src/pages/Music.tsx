@@ -78,7 +78,7 @@ export default function Music() {
       <section id="emotional-storytelling" className="w-full py-12 md:py-16 lg:py-20 px-6 md:px-8 lg:px-12 border-t border-graphite bg-noir scroll-mt-32">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
           <div>
-            <h3 className="text-2xl md:text-3xl lg:text-4xl font-display text-clean-white leading-tight mb-8 tracking-tight">Emotional Storytelling</h3>
+            <h3 className="text-2xl md:text-3xl lg:text-4xl font-display text-clean-white leading-tight mb-8 tracking-tight">Emotionally Intelligent Storytelling</h3>
             <p className="text-[16px] md:text-[18px] text-silver leading-relaxed">
               Whether writing for screen, co-writing for artists, or crafting original songs, the focus remains on language that helps people feel and understand. 
             </p>
