@@ -29,7 +29,7 @@ export default function Contact() {
 
   return (
     <div className="flex-1 flex flex-col w-full bg-noir">
-      <section className="w-full pt-8 pb-8 lg:pt-12 lg:pb-10 px-6 lg:px-12 border-b border-graphite scroll-mt-32">
+      <section className="w-full pt-16 pb-12 md:pt-20 md:pb-16 lg:pt-24 lg:pb-20 px-6 md:px-8 lg:px-12 border-b border-graphite scroll-mt-32">
         <div className="max-w-7xl mx-auto flex flex-col">
           <h1 className="text-[clamp(34px,3.4vw,52px)] font-display font-semibold text-clean-white leading-[0.9] tracking-tighter mb-4">Connect</h1>
           <div className="w-12 h-[2px] bg-accent mb-6"></div>
@@ -39,12 +39,12 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="w-full py-8 lg:py-10 px-6 lg:px-12 bg-noir">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+      <section className="w-full py-12 md:py-16 lg:py-20 px-6 md:px-8 lg:px-12 bg-noir">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
           
           <div id="media-inquiries" className="flex flex-col gap-5 scroll-mt-32">
             <div className="flex flex-col gap-3">
-              <h2 className="text-[24px] md:text-[28px] font-display text-clean-white leading-[1] tracking-tight">Media Inquiries</h2>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-display text-clean-white leading-tight tracking-tight">Media Inquiries</h2>
               <div className="w-12 h-px bg-accent"></div>
               <p className="text-[16px] md:text-[18px] text-silver leading-relaxed">
                 For press, interviews, features, music/media questions, and profile requests.
@@ -63,7 +63,7 @@ export default function Contact() {
 
           <div id="collaboration" className="flex flex-col gap-5 scroll-mt-32">
             <div className="flex flex-col gap-3">
-              <h2 className="text-[24px] md:text-[28px] font-display text-clean-white leading-[1] tracking-tight">Creative Collaboration</h2>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-display text-clean-white leading-tight tracking-tight">Creative Collaboration</h2>
               <div className="w-12 h-px bg-graphite"></div>
               <p className="text-[16px] md:text-[18px] text-silver leading-relaxed">
                 For songwriting, co-writing, music-for-screen, and selected creative projects.

@@ -56,10 +56,10 @@ export default function Home() {
       </section>
 
       {/* The Thread & Explanatory Rows */}
-      <section id="thread" className="w-full bg-noir py-12 lg:py-16 px-6 lg:px-12 scroll-mt-32">
-        <div className="max-w-[1120px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+      <section id="thread" className="w-full bg-noir py-12 md:py-16 lg:py-24 px-6 md:px-8 lg:px-12 scroll-mt-32">
+        <div className="max-w-[1120px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-start">
           <div className="flex flex-col gap-6">
-            <h2 className="text-[32px] md:text-[42px] font-display text-clean-white leading-[1] tracking-tight">The Thread</h2>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display text-clean-white leading-tight tracking-tight">The Thread</h2>
             <div className="w-12 h-[1px] bg-accent mb-2"></div>
             <div className="flex flex-col gap-5">
               <p className="text-[16px] md:text-[18px] text-silver leading-relaxed">
@@ -95,50 +95,50 @@ export default function Home() {
       </section>
 
       {/* The Creative Arc */}
-      <section id="creative-arc" className="w-full bg-noir py-12 lg:py-20 border-t border-graphite scroll-mt-32">
-        <div className="max-w-[1120px] mx-auto px-6 lg:px-12 flex flex-col gap-12 lg:gap-20">
+      <section id="creative-arc" className="w-full bg-noir py-12 md:py-16 lg:py-20 px-6 md:px-8 lg:px-12 border-t border-graphite scroll-mt-32">
+        <div className="max-w-[1120px] mx-auto flex flex-col gap-8 lg:gap-10">
           <div className="flex flex-col gap-6 max-w-2xl">
-            <h2 className="text-[32px] md:text-[42px] font-display text-clean-white leading-[1] tracking-tight">The Creative Arc</h2>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display text-clean-white leading-tight tracking-tight">The Creative Arc</h2>
             <div className="w-12 h-[1px] bg-accent mb-2"></div>
             <p className="text-[16px] md:text-[18px] text-silver leading-relaxed">
               A path through songs, stories, and spaces — from music and publication-making to founder rooms, coworking communities, and a return to song.
             </p>
           </div>
           
-          <div className="flex flex-col lg:flex-row gap-0 relative">
-            {/* Desktop timeline line */}
-            <div className="hidden lg:block absolute top-[11px] left-0 right-0 h-[1px] bg-graphite z-0"></div>
-            {/* Mobile timeline line */}
-            <div className="lg:hidden absolute top-2 bottom-2 left-[3.5px] w-[1px] bg-graphite z-0"></div>
+          <div className="relative">
+            {/* Mobile vertical line - only visible under md */}
+            <div className="md:hidden absolute top-2 bottom-2 left-[11.5px] w-[1px] bg-graphite z-0"></div>
             
-            {[
-              { date: '2000–2009', title: 'Songs', desc: 'Songwriting, co-writing, recording, and music-industry work, including Caroline’s Universal Music Group chapter.' },
-              { date: '2007–2016', title: 'Stories', desc: 'The Notebook, The Court, and The View — publication-making, editorial judgment, and place-based communications.' },
-              { date: 'WorkAbility Chapter', title: 'Spaces', desc: 'COO and later CEO leadership at WorkAbility CoWorking, supporting coworking operations, community-building, and creative-professional space-making before the coworking space closed after the Covid-19 lockdown.' },
-              { date: '2019', title: 'Spaces', desc: 'Mile High Pitch and Entrepreneurial SOS — founder support, startup visibility, and local entrepreneurial community response.' },
-              { date: '2021–2023', title: 'Spaces', desc: 'Startup Grind Denver chapter co-leadership, gathering founders, innovators, creators, and startup-community participants across the Denver ecosystem.' },
-              { date: 'Now', title: 'Songs + Stories', desc: 'Return to music through songs, music for screen, and selected creative collaborations.' }
-            ].map((node, i) => (
-              <div key={i} className="flex gap-6 lg:gap-4 lg:flex-col relative z-10 lg:w-[16.666%] pb-10 lg:pb-0 pr-4 lg:pr-6">
-                <div className="w-[8px] h-[8px] rounded-full bg-accent shrink-0 mt-[6px] lg:mt-1 relative z-10"></div>
-                <div className="flex flex-col gap-3">
-                  <div className="flex flex-col gap-1">
-                    <span className="text-accent text-[11px] uppercase tracking-wider font-medium">{node.date}</span>
-                    <h3 className="text-clean-white text-[15px] md:text-[16px] font-display leading-tight">{node.title}</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-8 md:gap-y-10 lg:gap-y-12 md:gap-x-10 lg:gap-x-12">
+              {[
+                { date: '2000–2009', title: 'Songs', desc: 'Songwriting, co-writing, recording, and music-industry work, including Caroline’s Universal Music Group chapter.' },
+                { date: '2007–2016', title: 'Stories', desc: 'The Notebook, The Court, and The View — publication-making, editorial judgment, and place-based communications.' },
+                { date: 'WorkAbility Chapter', title: 'Spaces', desc: 'COO and later CEO leadership at WorkAbility CoWorking, supporting coworking operations, community-building, and creative-professional space-making before the coworking space closed after the Covid-19 lockdown.' },
+                { date: '2019', title: 'Spaces', desc: 'Mile High Pitch and Entrepreneurial SOS — founder support, startup visibility, and local entrepreneurial community response.' },
+                { date: '2021–2023', title: 'Spaces', desc: 'Startup Grind Denver chapter co-leadership, gathering founders, innovators, creators, and startup-community participants across the Denver ecosystem.' },
+                { date: 'Now', title: 'Songs + Stories', desc: 'Return to music through songs, music for screen, and selected creative collaborations.' }
+              ].map((node, i) => (
+                <div key={i} className="flex gap-6 md:flex-col md:gap-0 relative z-10 pl-2 md:pl-0 md:border-t md:border-graphite/40 md:pt-5 pb-4 md:pb-0">
+                  <div className="w-[8px] h-[8px] rounded-full bg-accent shrink-0 mt-[6px] md:mt-0 md:mb-4 relative z-10"></div>
+                  <div className="flex flex-col gap-3">
+                    <div className="flex flex-col gap-1">
+                      <span className="text-accent text-[11px] uppercase tracking-wider font-medium">{node.date}</span>
+                      <h3 className="text-clean-white text-[15px] md:text-[16px] font-display leading-tight">{node.title}</h3>
+                    </div>
+                    <p className="text-silver text-[13px] md:text-[14px] leading-relaxed">
+                      {node.desc}
+                    </p>
                   </div>
-                  <p className="text-silver text-[13px] md:text-[14px] leading-relaxed">
-                    {node.desc}
-                  </p>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Feature Section */}
-      <section id="current-music" className="w-full bg-noir py-10 lg:py-12 border-y border-graphite scroll-mt-32">
-        <div className="max-w-[1120px] mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-8">
+      <section id="current-music" className="w-full bg-noir py-12 md:py-16 lg:py-20 px-6 md:px-8 lg:px-12 border-y border-graphite scroll-mt-32">
+        <div className="max-w-[1120px] mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="flex flex-col items-center md:items-start text-center md:text-left w-full relative">
             <div className="hidden md:block absolute left-[-24px] top-1 bottom-1 w-[2px] bg-[#A92F62]/70"></div>
             <p className="text-accent text-[12px] md:text-[13px] tracking-widest uppercase font-medium mb-3">Current Music</p>
@@ -159,11 +159,11 @@ export default function Home() {
       </section>
 
       {/* Editorial Preview */}
-      <section id="editorial-preview" className="w-full bg-noir py-12 lg:py-20 scroll-mt-32">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <section id="editorial-preview" className="w-full bg-noir py-12 md:py-16 lg:py-20 px-6 md:px-8 lg:px-12 scroll-mt-32">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
           <div className="flex flex-col items-start">
-            <h2 className="text-[32px] md:text-[42px] font-display text-clean-white leading-[1] tracking-tight mb-8">Editorial</h2>
-            <p className="text-[19px] md:text-[22px] text-silver max-w-xl mb-12 leading-relaxed">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display text-clean-white leading-tight tracking-tight mb-5">Editorial</h2>
+            <p className="text-[19px] md:text-[22px] text-silver max-w-xl mb-8 leading-relaxed">
               A curated view of publication-making, editorial judgment, visual rhythm, and place-based storytelling.
             </p>
             <Link to="/editorial" className="text-accent text-[13px] tracking-wider uppercase hover:text-clean-white transition-colors inline-flex items-center gap-4 focus:outline-none focus-visible:outline-none">
