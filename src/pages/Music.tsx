@@ -8,7 +8,7 @@ export default function Music() {
           <h1 className="text-[clamp(34px,3.4vw,52px)] font-display font-semibold text-clean-white leading-[0.9] tracking-tighter mb-4">Music</h1>
           <div className="w-12 h-[2px] bg-accent mb-6"></div>
           <p className="text-[18px] md:text-[20px] text-silver max-w-3xl leading-relaxed">
-            Songwriting, co-writing, and music for screen, driven by emotional storytelling.
+            Songwriting, co-writing, and music for screen, driven by emotionally intelligent storytelling.
           </p>
         </div>
       </section>
