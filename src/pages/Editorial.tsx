@@ -41,7 +41,7 @@ export default function Editorial() {
       <section id="editorial-work" className="w-full py-12 md:py-16 lg:py-20 px-6 md:px-8 lg:px-12 bg-noir overflow-hidden scroll-mt-32">
         <div className="max-w-7xl mx-auto flex flex-col gap-12 lg:gap-16">
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-start">
             <div className="flex flex-col gap-5 lg:pr-12">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-display text-clean-white leading-tight tracking-tight">The Notebook</h2>
               <p className="text-[16px] md:text-[18px] text-silver leading-relaxed">
@@ -58,7 +58,7 @@ export default function Editorial() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-start">
             <div className="flex flex-col gap-5 lg:pl-12 lg:order-2">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-display text-clean-white leading-tight tracking-tight">The Court</h2>
               <p className="text-[16px] md:text-[18px] text-silver leading-relaxed">
@@ -75,7 +75,7 @@ export default function Editorial() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-start">
             <div className="flex flex-col gap-5 lg:pr-12">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-display text-clean-white leading-tight tracking-tight">The View</h2>
               <p className="text-[16px] md:text-[18px] text-silver leading-relaxed">
