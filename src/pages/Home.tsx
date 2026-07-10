@@ -7,7 +7,7 @@ export default function Home() {
       <section className="w-full bg-noir flex flex-col lg:flex-row relative min-h-[100vh] lg:min-h-[85vh] overflow-hidden">
         
         {/* Mobile/Tablet Image Zone (Top) */}
-        <div className="w-full h-[55vh] md:h-[60vh] lg:hidden relative z-0 shrink-0">
+        <div className="w-full h-[55vh] md:h-[50vh] lg:hidden relative z-0 shrink-0">
           <img 
             src={`${import.meta.env.BASE_URL}caroline-lofts-headshot-clean.png`} 
             alt="Caroline Lofts" 
@@ -35,29 +35,33 @@ export default function Home() {
         </div>
         
         {/* Text Content Zone */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col justify-end lg:justify-center px-6 lg:px-12 pb-16 pt-0 lg:py-0 flex-1 -mt-24 md:-mt-32 lg:mt-0">
-          <div className="w-full lg:w-[50%] xl:w-[55%] flex flex-col gap-5 max-w-[640px] xl:max-w-[720px] drop-shadow-2xl lg:drop-shadow-none">
-            <h1 className="text-[clamp(48px,5.2vw,78px)] font-display font-semibold text-clean-white leading-[1] tracking-tighter mb-2">
-              Songs. <br className="hidden md:block" /><span className="text-accent">Stories.</span> <br className="hidden md:block" />Spaces.
-            </h1>
-            <p className="text-[18px] md:text-[20px] text-silver leading-relaxed max-w-lg lg:max-w-none mb-8 lg:mb-2">
-              Music, language, and <span className="text-accent/90">emotionally intelligent storytelling</span> across songs, screen, publications, and creative communities.
-            </p>
-            <div className="flex flex-wrap gap-10 items-center">
-              <Link to="/music" className="text-clean-white border-b border-clean-white pb-1 text-[13px] tracking-wider uppercase font-medium hover:text-accent hover:border-accent transition-all duration-300 focus:outline-none focus-visible:outline-none">
-                Listen / Watch
-              </Link>
-              <Link to="/music#selected-credits" className="text-silver border-b border-transparent pb-1 text-[13px] tracking-wider uppercase font-medium hover:text-clean-white transition-colors focus:outline-none focus-visible:outline-none">
-                View Music Credits
-              </Link>
+        <div className="relative z-10 w-full px-6 md:px-8 lg:px-12 flex-1 -mt-24 md:-mt-16 lg:mt-0 flex flex-col justify-end lg:justify-center">
+          <div className="max-w-7xl mx-auto w-full flex flex-col justify-end lg:justify-center pb-16 pt-0 lg:py-0 flex-1">
+            <div className="w-full lg:w-[50%] xl:w-[55%] flex flex-col gap-5 max-w-[640px] xl:max-w-[720px] drop-shadow-2xl lg:drop-shadow-none">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold text-clean-white leading-tight tracking-tighter mb-2">
+                <span className="block">Songs.</span>
+                <span className="block text-accent">Stories.</span>
+                <span className="block">Spaces.</span>
+              </h1>
+              <p className="text-[18px] md:text-[20px] text-silver leading-relaxed max-w-lg lg:max-w-none mb-8 lg:mb-2">
+                Music, language, and <span className="text-accent/90">emotionally intelligent storytelling</span> across songs, screen, publications, and creative communities.
+              </p>
+              <div className="flex flex-wrap gap-10 items-center">
+                <Link to="/music" className="text-clean-white border-b border-clean-white pb-1 text-[13px] tracking-wider uppercase font-medium hover:text-accent hover:border-accent transition-all duration-300 focus:outline-none focus-visible:outline-none">
+                  Listen / Watch
+                </Link>
+                <Link to="/music#selected-credits" className="text-silver border-b border-transparent pb-1 text-[13px] tracking-wider uppercase font-medium hover:text-clean-white transition-colors focus:outline-none focus-visible:outline-none">
+                  View Music Credits
+                </Link>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* The Thread & Explanatory Rows */}
-      <section id="thread" className="w-full bg-noir py-12 md:py-16 lg:py-24 px-6 md:px-8 lg:px-12 scroll-mt-32">
-        <div className="max-w-[1120px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-start">
+      <section id="thread" className="w-full bg-noir py-10 md:py-12 lg:py-16 px-6 md:px-8 lg:px-12 scroll-mt-32">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-start">
           <div className="flex flex-col gap-6">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display text-clean-white leading-tight tracking-tight">The Thread</h2>
             <div className="w-12 h-[1px] bg-accent mb-2"></div>
@@ -95,8 +99,8 @@ export default function Home() {
       </section>
 
       {/* The Creative Arc */}
-      <section id="creative-arc" className="w-full bg-noir py-12 md:py-16 lg:py-20 px-6 md:px-8 lg:px-12 border-t border-graphite scroll-mt-32">
-        <div className="max-w-[1120px] mx-auto flex flex-col gap-8 lg:gap-10">
+      <section id="creative-arc" className="w-full bg-noir py-10 md:py-12 lg:py-16 px-6 md:px-8 lg:px-12 border-t border-graphite scroll-mt-32">
+        <div className="max-w-7xl mx-auto flex flex-col gap-8 lg:gap-10">
           <div className="flex flex-col gap-6 max-w-2xl">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display text-clean-white leading-tight tracking-tight">The Creative Arc</h2>
             <div className="w-12 h-[1px] bg-accent mb-2"></div>
@@ -137,12 +141,12 @@ export default function Home() {
       </section>
 
       {/* Feature Section */}
-      <section id="current-music" className="w-full bg-noir py-12 md:py-16 lg:py-20 px-6 md:px-8 lg:px-12 border-y border-graphite scroll-mt-32">
-        <div className="max-w-[1120px] mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+      <section id="current-music" className="w-full bg-noir py-8 md:py-10 lg:py-12 px-6 md:px-8 lg:px-12 border-y border-graphite scroll-mt-32">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="flex flex-col items-center md:items-start text-center md:text-left w-full relative">
             <div className="hidden md:block absolute left-[-24px] top-1 bottom-1 w-[2px] bg-[#A92F62]/70"></div>
             <p className="text-accent text-[12px] md:text-[13px] tracking-widest uppercase font-medium mb-3">Current Music</p>
-            <h2 className="text-[clamp(24px,3vw,32px)] font-display text-clean-white leading-tight mb-2">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display text-clean-white leading-tight tracking-tight mb-2">
               “Stand Beside Us” — My Brother The Minotaur
             </h2>
             <p className="text-[16px] md:text-[18px] text-silver mb-6">Live & Unboxed</p>
@@ -159,8 +163,8 @@ export default function Home() {
       </section>
 
       {/* Editorial Preview */}
-      <section id="editorial-preview" className="w-full bg-noir py-12 md:py-16 lg:py-20 px-6 md:px-8 lg:px-12 scroll-mt-32">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
+      <section id="editorial-preview" className="w-full bg-noir py-10 md:py-12 lg:py-16 px-6 md:px-8 lg:px-12 scroll-mt-32">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-start">
           <div className="flex flex-col items-start">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display text-clean-white leading-tight tracking-tight mb-5">Editorial</h2>
             <p className="text-[19px] md:text-[22px] text-silver max-w-xl mb-8 leading-relaxed">
