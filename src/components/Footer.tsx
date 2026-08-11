@@ -16,13 +16,13 @@ export default function Footer() {
               </p>
             </div>
             <div className="flex flex-col gap-2 md:items-end pt-1">
-              <Link to="/contact#media-inquiries" className="text-[15px] lg:text-[16px] font-display text-clean-white hover:text-accent transition-colors border-b border-[#A92F62]/60 hover:border-accent pb-1 focus:outline-none focus-visible:outline-none">Media Inquiries</Link>
-              <Link to="/contact#collaboration" className="text-[15px] lg:text-[16px] font-display text-clean-white hover:text-accent transition-colors border-b border-[#A92F62]/60 hover:border-accent pb-1 focus:outline-none focus-visible:outline-none">Collaboration</Link>
+              <Link to="/contact#media-inquiries" className="text-[15px] lg:text-[16px] font-display text-clean-white hover:text-accent transition-colors border-b border-[#A92F62]/60 hover:border-accent pb-1 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">Media Inquiries</Link>
+              <Link to="/contact#collaboration" className="text-[15px] lg:text-[16px] font-display text-clean-white hover:text-accent transition-colors border-b border-[#A92F62]/60 hover:border-accent pb-1 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">Collaboration</Link>
             </div>
           </div>
           <div className="flex flex-col gap-3">
             <div className="w-full h-px bg-graphite"></div>
-            <div className="flex flex-col md:flex-row justify-between items-center text-[11px] text-silver/40 gap-4">
+            <div className="flex flex-col md:flex-row justify-between items-center text-[11px] text-silver/70 gap-4">
               <p>&copy; {new Date().getFullYear()} Caroline Lofts. All rights reserved.</p>
             </div>
           </div>
