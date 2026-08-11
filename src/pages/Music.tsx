@@ -48,7 +48,7 @@ export default function Music() {
               </div>
               <div className="flex flex-col lg:items-end gap-1">
                 <p className="text-accent text-[13px] tracking-wider uppercase font-medium">Artist / Co-Writer</p>
-                <p className="text-silver/60 text-xs tracking-wider uppercase">Current Public Media Example</p>
+                <p className="text-silver/70 text-xs tracking-wider uppercase">Current Public Media Example</p>
               </div>
             </div>
             
