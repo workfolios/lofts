@@ -54,10 +54,10 @@ export default function Contact() {
               <input type="text" name="name" id="media-name" aria-label="Name" required className="bg-transparent border-b border-silver/30 pb-1.5 text-[16px] text-clean-white focus:outline-none focus:border-accent transition-colors placeholder-silver/80" placeholder="Name" />
               <input type="email" name="email" id="media-email" aria-label="Email" required className="bg-transparent border-b border-silver/30 pb-1.5 text-[16px] text-clean-white focus:outline-none focus:border-accent transition-colors placeholder-silver/80" placeholder="Email" />
               <textarea name="message" id="media-message" aria-label="Message" required rows={3} className="bg-transparent border-b border-silver/30 pb-1.5 text-[16px] text-clean-white focus:outline-none focus:border-accent transition-colors resize-none placeholder-silver/80" placeholder="Message"></textarea>
-              <button type="submit" className="self-start text-clean-white border-b border-[#A92F62]/80 pb-1 text-[13px] tracking-wider uppercase font-medium hover:text-accent hover:border-accent transition-all mt-1 focus:outline-none focus-visible:outline-none">
+              <button type="submit" className="self-start text-clean-white border-b border-[#A92F62]/80 pb-1 text-[13px] tracking-wider uppercase font-medium hover:text-accent hover:border-accent transition-all mt-1 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">
                 Send Media Inquiry
               </button>
-              <span className="text-[12px] text-silver/60 italic self-start -mt-2">Opens your default email client.</span>
+              <span className="text-[12px] text-silver/70 italic self-start -mt-2">Opens your default email client.</span>
             </form>
           </div>
 
@@ -73,10 +73,10 @@ export default function Contact() {
               <input type="text" name="name" id="collab-name" aria-label="Name" required className="bg-transparent border-b border-silver/30 pb-1.5 text-[16px] text-clean-white focus:outline-none focus:border-accent transition-colors placeholder-silver/80" placeholder="Name" />
               <input type="email" name="email" id="collab-email" aria-label="Email" required className="bg-transparent border-b border-silver/30 pb-1.5 text-[16px] text-clean-white focus:outline-none focus:border-accent transition-colors placeholder-silver/80" placeholder="Email" />
               <textarea name="message" id="collab-message" aria-label="Message" required rows={3} className="bg-transparent border-b border-silver/30 pb-1.5 text-[16px] text-clean-white focus:outline-none focus:border-accent transition-colors resize-none placeholder-silver/80" placeholder="Message"></textarea>
-              <button type="submit" className="self-start text-clean-white border-b border-[#A92F62]/80 pb-1 text-[13px] tracking-wider uppercase font-medium hover:text-accent hover:border-accent transition-all mt-1 focus:outline-none focus-visible:outline-none">
+              <button type="submit" className="self-start text-clean-white border-b border-[#A92F62]/80 pb-1 text-[13px] tracking-wider uppercase font-medium hover:text-accent hover:border-accent transition-all mt-1 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">
                 Send Collaboration Inquiry
               </button>
-              <span className="text-[12px] text-silver/60 italic self-start -mt-2">Opens your default email client.</span>
+              <span className="text-[12px] text-silver/70 italic self-start -mt-2">Opens your default email client.</span>
             </form>
           </div>
 

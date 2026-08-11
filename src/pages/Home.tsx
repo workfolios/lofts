@@ -47,10 +47,10 @@ export default function Home() {
                 Music, language, and <span className="text-accent/90">emotionally intelligent storytelling</span> across songs, screen, publications, and creative communities.
               </p>
               <div className="flex flex-wrap gap-10 items-center">
-                <Link to="/music" className="text-clean-white border-b border-clean-white pb-1 text-[13px] tracking-wider uppercase font-medium hover:text-accent hover:border-accent transition-all duration-300 focus:outline-none focus-visible:outline-none">
+                <Link to="/music" className="text-clean-white border-b border-clean-white pb-1 text-[13px] tracking-wider uppercase font-medium hover:text-accent hover:border-accent transition-all duration-300 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">
                   Listen / Watch
                 </Link>
-                <Link to="/music#selected-credits" className="text-silver border-b border-transparent pb-1 text-[13px] tracking-wider uppercase font-medium hover:text-clean-white transition-colors focus:outline-none focus-visible:outline-none">
+                <Link to="/music#selected-credits" className="text-silver border-b border-transparent pb-1 text-[13px] tracking-wider uppercase font-medium hover:text-clean-white transition-colors focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">
                   View Music Credits
                 </Link>
               </div>
@@ -151,10 +151,10 @@ export default function Home() {
             </h2>
             <p className="text-[16px] md:text-[18px] text-silver mb-6">Live & Unboxed</p>
             <div className="flex flex-wrap items-center justify-center md:justify-start gap-8">
-              <Link to="/music" className="text-clean-white border-b border-[#A92F62]/60 pb-1 text-[13px] tracking-wider uppercase font-medium hover:text-accent hover:border-accent transition-all duration-300 focus:outline-none focus-visible:outline-none">
+              <Link to="/music" className="text-clean-white border-b border-[#A92F62]/60 pb-1 text-[13px] tracking-wider uppercase font-medium hover:text-accent hover:border-accent transition-all duration-300 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">
                 Listen / Watch
               </Link>
-              <Link to="/music#selected-credits" className="text-silver border-b border-transparent pb-1 text-[13px] tracking-wider uppercase font-medium hover:text-clean-white transition-colors focus:outline-none focus-visible:outline-none">
+              <Link to="/music#selected-credits" className="text-silver border-b border-transparent pb-1 text-[13px] tracking-wider uppercase font-medium hover:text-clean-white transition-colors focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">
                 View Music Credits
               </Link>
             </div>
@@ -170,7 +170,7 @@ export default function Home() {
             <p className="text-[19px] md:text-[22px] text-silver max-w-xl mb-8 leading-relaxed">
               A curated view of publication-making, editorial judgment, visual rhythm, and place-based storytelling.
             </p>
-            <Link to="/editorial" className="text-accent text-[13px] tracking-wider uppercase hover:text-clean-white transition-colors inline-flex items-center gap-4 focus:outline-none focus-visible:outline-none">
+            <Link to="/editorial" className="text-accent text-[13px] tracking-wider uppercase hover:text-clean-white transition-colors inline-flex items-center gap-4 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">
               Explore Editorial <span className="w-12 h-[1px] bg-current"></span>
             </Link>
           </div>
@@ -179,13 +179,13 @@ export default function Home() {
               <div className="w-full aspect-[4/3] bg-noir/50 flex items-center justify-center">
                 <img src={`${import.meta.env.BASE_URL}the-view-issue-one-map.jpg`} alt="The View Issue One Map" className="w-full h-full object-contain" loading="lazy" />
               </div>
-              <p className="text-silver/60 text-[11px] uppercase tracking-widest mt-3 text-center">The View</p>
+              <p className="text-silver/70 text-[11px] uppercase tracking-widest mt-3 text-center">The View</p>
             </div>
             <div className="w-full sm:w-[44%] max-w-[280px] shadow-2xl flex flex-col items-center">
               <div className="w-full aspect-[4/5] bg-noir/50 flex items-center justify-center">
                 <img src={`${import.meta.env.BASE_URL}notebook-cover-03-on-the-run.jpg`} alt="The Notebook Cover" className="w-full h-full object-contain" loading="lazy" />
               </div>
-              <p className="text-silver/60 text-[11px] uppercase tracking-widest mt-3 text-center">The Notebook</p>
+              <p className="text-silver/70 text-[11px] uppercase tracking-widest mt-3 text-center">The Notebook</p>
             </div>
           </div>
         </div>

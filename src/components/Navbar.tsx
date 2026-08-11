@@ -27,7 +27,7 @@ export default function Navbar() {
     >
       <div className="w-full px-6 md:px-8 lg:px-12">
         <div className="max-w-7xl mx-auto flex items-center justify-between w-full">
-          <Link to="/" onClick={() => setMenuOpen(false)} className="text-xl lg:text-2xl font-display font-semibold text-accent tracking-normal focus:outline-none focus-visible:outline-none z-50">
+          <Link to="/" onClick={() => setMenuOpen(false)} className="text-xl lg:text-2xl font-display font-semibold text-accent tracking-normal focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent z-50">
             Caroline Lofts
           </Link>
           <div className="hidden md:flex items-center gap-8">
@@ -37,7 +37,7 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   to={link.path}
-                  className={`text-[13px] uppercase tracking-wide transition-colors duration-300 relative focus:outline-none focus-visible:outline-none ${
+                  className={`text-[13px] uppercase tracking-wide transition-colors duration-300 relative focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent ${
                     isActive ? 'text-accent font-medium after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-[1px] after:bg-accent' : 'text-silver hover:text-clean-white'
                   }`}
                 >
@@ -49,7 +49,7 @@ export default function Navbar() {
           
           {/* Mobile Menu Toggle */}
           <button 
-            className="md:hidden text-[13px] uppercase tracking-wide text-silver hover:text-clean-white transition-colors focus:outline-none focus-visible:outline-none z-50"
+            className="md:hidden text-[13px] uppercase tracking-wide text-silver hover:text-clean-white transition-colors focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent z-50"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
@@ -73,7 +73,7 @@ export default function Navbar() {
                 key={link.name}
                 to={link.path}
                 onClick={() => setMenuOpen(false)}
-                className={`text-[15px] uppercase tracking-wide transition-colors duration-300 w-max focus:outline-none focus-visible:outline-none ${
+                className={`text-[15px] uppercase tracking-wide transition-colors duration-300 w-max focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent ${
                   isActive ? 'text-accent font-medium border-b border-accent pb-0.5' : 'text-silver hover:text-clean-white'
                 }`}
               >
