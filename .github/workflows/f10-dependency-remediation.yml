@@ -1,0 +1,55 @@
+name: F-10 Dependency Remediation
+
+on:
+  push:
+    branches:
+      - devops/f10-dependency-remediation
+
+permissions:
+  contents: read
+
+jobs:
+  remediate:
+    name: Generate Patched Lockfile
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+
+      - name: Setup Node.js
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install baseline dependencies
+        run: npm ci
+
+      - name: Generate patched lockfile
+        run: npm audit fix --package-lock-only
+
+      - name: Show bounded dependency changes
+        run: |
+          git diff -- package.json package-lock.json
+          npm ls nanoid postcss react-router react-router-dom --all
+
+      - name: Reinstall from patched lockfile
+        run: |
+          rm -rf node_modules
+          npm ci
+
+      - name: Verify no high or critical vulnerabilities
+        run: npm audit --audit-level=high
+
+      - name: Type check
+        run: npm run typecheck
+
+      - name: Build
+        run: npm run build
+
+      - name: Upload patched lockfile
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: f10-patched-lockfile
+          path: package-lock.json
+          if-no-files-found: error
