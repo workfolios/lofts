@@ -6,7 +6,7 @@ on:
       - devops/f10-dependency-remediation
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   remediate:
@@ -28,18 +28,13 @@ jobs:
       - name: Generate patched lockfile
         run: npm audit fix --package-lock-only
 
-      - name: Show bounded dependency changes
-        run: |
-          git diff -- package.json package-lock.json
-          npm ls nanoid postcss react-router react-router-dom --all
-
       - name: Reinstall from patched lockfile
         run: |
           rm -rf node_modules
           npm ci
 
-      - name: Verify no high or critical vulnerabilities
-        run: npm audit --audit-level=high
+      - name: Verify no vulnerabilities
+        run: npm audit
 
       - name: Type check
         run: npm run typecheck
@@ -47,9 +42,14 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Upload patched lockfile
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
-        with:
-          name: f10-patched-lockfile
-          path: package-lock.json
-          if-no-files-found: error
+      - name: Commit patched lockfile
+        run: |
+          if git diff --quiet -- package-lock.json; then
+            echo "No package-lock.json changes to commit."
+            exit 0
+          fi
+          git config user.name "Workfolio Studio"
+          git config user.email "brian.j.curr@gmail.com"
+          git add package-lock.json
+          git commit -m "Patch F-10 vulnerable dependency graph"
+          git push origin HEAD:devops/f10-dependency-remediation
