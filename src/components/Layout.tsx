@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Outlet, useLocation, useNavigationType } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import SeoManager from './SeoManager';
 
 function RouteScrollManager() {
   const location = useLocation();
@@ -36,6 +37,7 @@ function RouteScrollManager() {
 export default function Layout() {
   return (
     <div className="min-h-screen bg-[#06070D] text-clean-white">
+      <SeoManager />
       <RouteScrollManager />
       <Navbar />
       <main id="main-content" tabIndex={-1} className="flex-1 w-full overflow-x-hidden pt-[68px] md:pt-[72px] focus:outline-none">
