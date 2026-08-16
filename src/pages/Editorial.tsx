@@ -40,7 +40,9 @@ export default function Editorial() {
       return;
     }
 
+    const previousRootOverflow = document.documentElement.style.overflow;
     const previousBodyOverflow = document.body.style.overflow;
+    document.documentElement.style.overflow = 'hidden';
     document.body.style.overflow = 'hidden';
 
     if (!dialog.open) {
@@ -48,6 +50,7 @@ export default function Editorial() {
     }
 
     return () => {
+      document.documentElement.style.overflow = previousRootOverflow;
       document.body.style.overflow = previousBodyOverflow;
     };
   }, [selectedItem]);
@@ -170,14 +173,14 @@ export default function Editorial() {
 
       <dialog
         ref={dialogRef}
-        className="artifact-dialog w-[calc(100%-2rem)] max-w-6xl max-h-[calc(100dvh-2rem)] overflow-hidden border border-graphite bg-midnight p-0 text-clean-white shadow-2xl"
+        className="artifact-dialog w-[calc(100%_-_2rem)] max-w-6xl max-h-[calc(100dvh_-_2rem)] overflow-hidden border border-graphite bg-midnight p-0 text-clean-white shadow-2xl"
         aria-labelledby={selectedIndex === null ? undefined : `artifact-dialog-title-${selectedIndex}`}
         aria-describedby={selectedIndex === null ? undefined : `artifact-dialog-description-${selectedIndex}`}
         onClose={handleDialogClosed}
         onClick={handleBackdropClick}
       >
         {selectedItem && selectedIndex !== null && (
-          <div className="flex max-h-[calc(100dvh-2rem)] flex-col">
+          <div className="flex max-h-[calc(100dvh_-_2rem)] flex-col">
             <div className="flex items-start justify-between gap-6 border-b border-graphite px-5 py-4 md:px-6 md:py-5">
               <div className="flex min-w-0 flex-col gap-1">
                 <h2 id={`artifact-dialog-title-${selectedIndex}`} className="text-xl md:text-2xl font-display text-clean-white leading-tight">
