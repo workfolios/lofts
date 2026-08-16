@@ -35,3 +35,22 @@
     @apply text-silver leading-relaxed;
   }
 }
+
+.artifact-dialog::backdrop {
+  background: rgba(6, 7, 13, 0.92);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

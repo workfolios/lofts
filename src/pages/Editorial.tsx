@@ -1,30 +1,81 @@
+import { useEffect, useRef, useState, type MouseEvent } from 'react';
+
+const archiveItems = [
+  { 
+    src: import.meta.env.BASE_URL + 'notebook-cover-03-on-the-run.jpg', 
+    title: 'The Notebook',
+    description: 'Kensington & Chelsea publication archive.',
+    orientation: 'portrait'
+  },
+  { 
+    src: import.meta.env.BASE_URL + 'the-court-cover-01-shaftesbury.jpg', 
+    title: 'The Court',
+    description: 'Editorial publication sample.',
+    orientation: 'portrait'
+  },
+  { 
+    src: import.meta.env.BASE_URL + 'notebook-cover-04-wine-issue.jpg', 
+    title: 'The Notebook',
+    description: 'Kensington & Chelsea publication archive.',
+    orientation: 'portrait'
+  },
+  { 
+    src: import.meta.env.BASE_URL + 'the-view-issue-three-cover.jpg', 
+    title: 'The View',
+    description: 'Earls Court redevelopment communications.',
+    orientation: 'portrait'
+  },
+];
+
 export default function Editorial() {
-  const archiveItems = [
-    { 
-      src: import.meta.env.BASE_URL + 'notebook-cover-03-on-the-run.jpg', 
-      title: 'The Notebook',
-      description: 'Kensington & Chelsea publication archive.',
-      orientation: 'portrait'
-    },
-    { 
-      src: import.meta.env.BASE_URL + 'the-court-cover-01-shaftesbury.jpg', 
-      title: 'The Court',
-      description: 'Editorial publication sample.',
-      orientation: 'portrait'
-    },
-    { 
-      src: import.meta.env.BASE_URL + 'notebook-cover-04-wine-issue.jpg', 
-      title: 'The Notebook',
-      description: 'Kensington & Chelsea publication archive.',
-      orientation: 'portrait'
-    },
-    { 
-      src: import.meta.env.BASE_URL + 'the-view-issue-three-cover.jpg', 
-      title: 'The View',
-      description: 'Earls Court redevelopment communications.',
-      orientation: 'portrait'
-    },
-  ];
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const dialogRef = useRef<HTMLDialogElement>(null);
+  const lastTriggerRef = useRef<HTMLButtonElement | null>(null);
+  const selectedItem = selectedIndex === null ? null : archiveItems[selectedIndex];
+
+  useEffect(() => {
+    const dialog = dialogRef.current;
+
+    if (!dialog || !selectedItem) {
+      return;
+    }
+
+    const previousRootOverflow = document.documentElement.style.overflow;
+    const previousBodyOverflow = document.body.style.overflow;
+    document.documentElement.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
+
+    if (!dialog.open) {
+      dialog.showModal();
+    }
+
+    return () => {
+      document.documentElement.style.overflow = previousRootOverflow;
+      document.body.style.overflow = previousBodyOverflow;
+    };
+  }, [selectedItem]);
+
+  const openArtifact = (index: number, trigger: HTMLButtonElement) => {
+    lastTriggerRef.current = trigger;
+    setSelectedIndex(index);
+  };
+
+  const closeArtifact = () => {
+    if (dialogRef.current?.open) {
+      dialogRef.current.close();
+    }
+  };
+
+  const handleDialogClosed = () => {
+    setSelectedIndex(null);
+    window.requestAnimationFrame(() => lastTriggerRef.current?.focus());
+  };
+
+  const handleBackdropClick = (event: MouseEvent<HTMLDialogElement>) => {
+    if (event.target === event.currentTarget) {
+      closeArtifact();
+    }
+  };
 
   return (
     <div className="flex-1 flex flex-col w-full bg-noir">
@@ -100,10 +151,16 @@ export default function Editorial() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display text-clean-white leading-tight tracking-tight">Curated Gallery</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {archiveItems.map((item, index) => (
-              <div key={index} className="flex flex-col gap-4">
-                <div className={`w-full ${item.orientation === 'portrait' ? 'aspect-[4/5]' : 'aspect-[4/3]'} relative overflow-hidden bg-noir/30 p-4 lg:p-6 flex items-center justify-center shadow-2xl`}>
+              <div key={`${item.src}-${index}`} className="flex flex-col gap-4">
+                <button
+                  type="button"
+                  onClick={(event) => openArtifact(index, event.currentTarget)}
+                  aria-haspopup="dialog"
+                  aria-label={`View ${item.title} artifact`}
+                  className={`w-full ${item.orientation === 'portrait' ? 'aspect-[4/5]' : 'aspect-[4/3]'} relative overflow-hidden bg-noir/30 p-4 lg:p-6 flex items-center justify-center shadow-2xl border border-transparent cursor-zoom-in hover:border-silver/40 focus:outline-none focus-visible:border-accent focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent`}
+                >
                   <img src={item.src} alt={item.title} className="w-full h-full object-contain" loading="lazy" />
-                </div>
+                </button>
                 <div className="flex flex-col gap-1">
                   <h3 className="text-[18px] md:text-[20px] font-display text-clean-white leading-[1]">{item.title}</h3>
                   <p className="text-[14px] md:text-[15px] text-silver/80 tracking-wide">{item.description}</p>
@@ -113,6 +170,48 @@ export default function Editorial() {
           </div>
         </div>
       </section>
+
+      <dialog
+        ref={dialogRef}
+        className="artifact-dialog w-[calc(100%_-_2rem)] max-w-6xl max-h-[calc(100dvh_-_2rem)] overflow-hidden border border-graphite bg-midnight p-0 text-clean-white shadow-2xl"
+        aria-labelledby={selectedIndex === null ? undefined : `artifact-dialog-title-${selectedIndex}`}
+        aria-describedby={selectedIndex === null ? undefined : `artifact-dialog-description-${selectedIndex}`}
+        onClose={handleDialogClosed}
+        onClick={handleBackdropClick}
+      >
+        {selectedItem && selectedIndex !== null && (
+          <div className="flex max-h-[calc(100dvh_-_2rem)] flex-col">
+            <div className="flex items-start justify-between gap-6 border-b border-graphite px-5 py-4 md:px-6 md:py-5">
+              <div className="flex min-w-0 flex-col gap-1">
+                <h2 id={`artifact-dialog-title-${selectedIndex}`} className="text-xl md:text-2xl font-display text-clean-white leading-tight">
+                  {selectedItem.title}
+                </h2>
+                <p id={`artifact-dialog-description-${selectedIndex}`} className="text-[14px] md:text-[15px] text-silver">
+                  {selectedItem.description}
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={closeArtifact}
+                autoFocus
+                className="shrink-0 text-[13px] uppercase tracking-wide text-silver hover:text-clean-white focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+                aria-label={`Close ${selectedItem.title} artifact`}
+              >
+                Close
+              </button>
+            </div>
+            <div className="min-h-0 flex-1 overflow-auto p-4 md:p-6 lg:p-8">
+              <div className="flex min-h-full items-center justify-center">
+                <img
+                  src={selectedItem.src}
+                  alt={selectedItem.title}
+                  className="max-h-[72dvh] w-auto max-w-full object-contain shadow-2xl"
+                />
+              </div>
+            </div>
+          </div>
+        )}
+      </dialog>
     </div>
   );
 }

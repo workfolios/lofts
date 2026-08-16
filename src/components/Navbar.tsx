@@ -25,6 +25,13 @@ export default function Navbar() {
         WebkitTransform: 'translateZ(0)'
       }}
     >
+      <a
+        href="#main-content"
+        className="absolute left-4 top-2 z-[100] -translate-y-24 bg-accent px-4 py-2 text-[13px] font-medium uppercase tracking-wide text-noir transition-transform duration-200 focus:translate-y-0 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-clean-white motion-reduce:transition-none"
+      >
+        Skip to main content
+      </a>
+
       <div className="w-full px-6 md:px-8 lg:px-12">
         <div className="max-w-7xl mx-auto flex items-center justify-between w-full">
           <Link to="/" onClick={() => setMenuOpen(false)} className="text-xl lg:text-2xl font-display font-semibold text-accent tracking-normal focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent z-50">
@@ -37,6 +44,7 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   to={link.path}
+                  aria-current={isActive ? 'page' : undefined}
                   className={`text-[13px] uppercase tracking-wide transition-colors duration-300 relative focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent ${
                     isActive ? 'text-accent font-medium after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-[1px] after:bg-accent' : 'text-silver hover:text-clean-white'
                   }`}
@@ -73,6 +81,7 @@ export default function Navbar() {
                 key={link.name}
                 to={link.path}
                 onClick={() => setMenuOpen(false)}
+                aria-current={isActive ? 'page' : undefined}
                 className={`text-[15px] uppercase tracking-wide transition-colors duration-300 w-max focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent ${
                   isActive ? 'text-accent font-medium border-b border-accent pb-0.5' : 'text-silver hover:text-clean-white'
                 }`}
